@@ -1,12 +1,16 @@
 {
-    "name": "pantheon-systems/example-drops-8-composer",
-    "description": "Install drops-8 with Composer on Pantheon.",
+    "name": "tirazel/d8_composer_base",
+    "description": "Base Drupal 8 Composer structure for Boulder.",
     "type": "project",
     "license": "MIT",
     "repositories": [
         {
             "type": "composer",
             "url": "https://packages.drupal.org/8"
+        },
+        {
+            "type": "composer",
+            "url": "../ucb2019_base"
         }
     ],
     "require": {
