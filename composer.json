@@ -10,7 +10,7 @@
         },
         {
             "type": "vcs",
-            "url": "../ucb2019_base"
+            "url": "/home/tirazel/ucb2019_base"
         }
     ],
     "require": {
