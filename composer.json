@@ -1,6 +1,6 @@
 {
     "name": "cu-boulder/d8_composer_base",
-    "description": "Base Drupal 8 Composer structure for Boulder.",
+    "description": "Base Drupal 8 Composer structure for CU Boulder.",
     "type": "project",
     "license": "MIT",
     "repositories": [
