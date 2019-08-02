@@ -23,7 +23,7 @@
 
     ],
     "require": {
-        "php": ">=7.0.8",
+        "php": ">=7.3.0",
         "composer/installers": "^1.0.20",
         "cu-boulder/boulder_content_hub_page_types": "dev-master",
         "cu-boulder/d8-profile-ucbstandard": "dev-master",
