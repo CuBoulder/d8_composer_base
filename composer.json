@@ -37,7 +37,7 @@
         "drupal/core": "^8.6.15",
         "drupal/ctools": "^3.2",
         "drupal/paragraphs": "^1.8",
-        "drupal/purge": "dev-master",
+        "drupal/purge": "3.0.0-beta8",
         "drush-ops/behat-drush-endpoint": "^9.3",
         "drush/drush": "~8",
         "pantheon-systems/quicksilver-pushback": "~1",
@@ -48,7 +48,7 @@
     "conflict": {
             "drupal/drupal": "*"
     },
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "prefer-stable": true,
     "autoload": {
         "classmap": [
