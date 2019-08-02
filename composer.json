@@ -14,6 +14,10 @@
         },
         {
             "type": "vcs",
+            "url": "https://github.com/CuBoulder/ucb_content_hub_page_types"
+        }
+        {
+            "type": "vcs",
             "url": "/home/tirazel/d8_profile_base"
         }
 
@@ -34,7 +38,8 @@
         "webflo/drupal-core-strict": "^8.6.15",
         "zaporylie/composer-drupal-optimizations": "^1.0",
         "cu-boulder/ucb2019_base": "dev-master",
-        "cu-boulder/d8-profile-ucbstandard": "dev-master"
+        "cu-boulder/d8-profile-ucbstandard": "dev-master",
+        "cu-boulder/boulder_content_hub_page_types": "dev-master"
     },
     "conflict": {
             "drupal/drupal": "*"
