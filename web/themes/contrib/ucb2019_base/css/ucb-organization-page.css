@@ -1,0 +1,68 @@
+
+.ucb-org-organization-container h2 {
+    font-size: 1.6em;
+}
+
+.ucb-org-relation {
+    font-weight: bolder;
+    display: block;
+    font-size: 1.2em;
+}
+
+.ucb-org-header {
+    padding-bottom: 0.5em;
+}
+
+.ucb-org-contact-buttons-list {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    padding: 0;
+}
+
+.ucb-org-contact-buttons-list li {
+    margin-right: 1em;
+}
+
+.ucb-org-address-list {
+    list-style: none;
+    padding: 0;
+}
+
+ul.ucb-org-social-list {
+    display: flex;
+    list-style: none;
+    padding: 0;
+}
+
+.ucb-org-social-link a.ucb-social-link {
+    background: transparent;
+    border: 1px solid transparent;
+    color: #006db1;
+}
+
+.ucb-org-map-embed {
+    position: relative;
+}
+
+.ucb-org-map-embed a .embed-map-label {
+    background: black;
+    color: #fff;
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 5px;
+    font-size: 85%;
+}
+
+.ucb-org-child-title {
+    font-size: 1.25em;
+}
+
+.ucb-org-children-contact-list {
+    list-style: none;
+    padding-left: 1em;
+}
