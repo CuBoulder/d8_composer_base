@@ -7,13 +7,24 @@ ucb-global:
     theme:
       css/style.css: {}
       css/style-responsive.css: {}
+      css/fontawesome/fontawesome.min.css: {}
+      css/fontawesome/brands.min.css: {}
+      css/fontawesome/solid.min.css: {}
   js:
     js/bootstrap/bootstrap.min.js: {}
-    js/fontawesome/all.min.js: {}
+#    js/fontawesome/brands.min.js: {}
+#    js/fontawesome/solid.min.js: {}
+#    js/fontawesome/fontawesome.min.js: {}
     js/ucb-main.js: {}
   dependencies:
     - core/drupal
     - core/jquery
+
+ucb-views:
+  version: 1.x
+  css:
+    theme:
+      css/ucb-views.css: {}
 
 ucb-alerts:
   version: 1.x
@@ -40,6 +51,14 @@ ucb-howto-page:
   css:
     theme:
       css/ucb-howto.css: {}
+
+ucb-guide-page:
+  version: 1.x
+  css:
+    theme:
+      css/ucb-guide.css: {}
+  js:
+    js/ucb-guide.js: {}
 
 ucb-organization-page:
   version: 1.x
