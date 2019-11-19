@@ -1118,6 +1118,7 @@
             ],
             "description": "Promoting the interoperability of container objects (DIC, SL, etc.)",
             "homepage": "https://github.com/container-interop/container-interop",
+            "abandoned": "psr/container",
             "time": "2017-02-14T19:40:03+00:00"
         },
         {
@@ -1126,12 +1127,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/CuBoulder/ucb_content_hub_page_types.git",
-                "reference": "5b375972688f43361ea44c6f950251844519152c"
+                "reference": "64477134dbe3d17e21f6a6861d44960408b62428"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/CuBoulder/ucb_content_hub_page_types/zipball/5b375972688f43361ea44c6f950251844519152c",
-                "reference": "5b375972688f43361ea44c6f950251844519152c",
+                "url": "https://api.github.com/repos/CuBoulder/ucb_content_hub_page_types/zipball/64477134dbe3d17e21f6a6861d44960408b62428",
+                "reference": "64477134dbe3d17e21f6a6861d44960408b62428",
                 "shasum": ""
             },
             "type": "drupal-module",
@@ -1143,7 +1144,7 @@
                 "source": "https://github.com/CuBoulder/ucb_content_hub_page_types/tree/master",
                 "issues": "https://github.com/CuBoulder/ucb_content_hub_page_types/issues"
             },
-            "time": "2019-11-15T16:43:02+00:00"
+            "time": "2019-11-18T23:16:06+00:00"
         },
         {
             "name": "cu-boulder/d8-profile-ucbstandard",
@@ -3246,8 +3247,7 @@
             "homepage": "https://www.drupal.org/project/feeds_para_mapper",
             "support": {
                 "source": "https://git.drupalcode.org/project/feeds_para_mapper"
-            },
-            "time": "2019-07-01T00:37:13+00:00"
+            }
         },
         {
             "name": "drupal/field_group",
