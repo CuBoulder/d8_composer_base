@@ -24,17 +24,13 @@ class EntityReferenceHandler extends AbstractHandler {
       $label_key = 'name';
     }
 
-    if (!$label_key && $entity_type_id == 'user') {
-      $label_key = 'name';
-    }
-
     // Determine target bundle restrictions.
     $target_bundle_key = NULL;
     if ($target_bundles = $this->getTargetBundles()) {
       $target_bundle_key = $entity_definition->getKey('bundle');
     }
 
-    foreach ((array) $values as $value) {
+    foreach ($values as $value) {
       $query = \Drupal::entityQuery($entity_type_id)->condition($label_key, $value);
       $query->accessCheck(FALSE);
       if ($target_bundles && $target_bundle_key) {

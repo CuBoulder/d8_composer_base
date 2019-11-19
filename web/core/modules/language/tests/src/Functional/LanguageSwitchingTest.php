@@ -22,11 +22,6 @@ class LanguageSwitchingTest extends BrowserTestBase {
    */
   public static $modules = ['locale', 'locale_test', 'language', 'block', 'language_test', 'menu_ui'];
 
-  /**
-   * {@inheritdoc}
-   */
-  protected $defaultTheme = 'classy';
-
   protected function setUp() {
     parent::setUp();
 

@@ -20,11 +20,6 @@ class ResponsiveImageAdminUITest extends BrowserTestBase {
   public static $modules = ['responsive_image', 'responsive_image_test_module'];
 
   /**
-   * {@inheritdoc}
-   */
-  protected $defaultTheme = 'stark';
-
-  /**
    * Drupal\simpletest\WebTestBase\setUp().
    */
   protected function setUp() {
@@ -92,7 +87,7 @@ class ResponsiveImageAdminUITest extends BrowserTestBase {
 
       foreach ($image_styles as $image_style_name) {
         // Check if the image styles are available in the dropdowns.
-        $this->assertNotEmpty($this->xpath(
+        $this->assertTrue($this->xpath(
           '//select[@name=:name]//option[@value=:style]',
           [
             ':name' => 'keyed_styles[responsive_image_test_module.' . $case[0] . '][' . $case[1] . '][image_style]',

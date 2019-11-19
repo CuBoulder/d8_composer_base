@@ -2,7 +2,6 @@
 
 namespace Drupal\Tests\views\Functional\Plugin;
 
-use Drupal\Core\Url;
 use Drupal\Tests\views\Functional\ViewTestBase;
 use Drupal\views\Views;
 
@@ -26,12 +25,7 @@ class DisplayFeedTest extends ViewTestBase {
    *
    * @var array
    */
-  public static $modules = ['block', 'node', 'views', 'views_test_rss'];
-
-  /**
-   * {@inheritdoc}
-   */
-  protected $defaultTheme = 'classy';
+  public static $modules = ['block', 'node', 'views'];
 
   protected function setUp($import_test_views = TRUE) {
     parent::setUp($import_test_views);
@@ -59,29 +53,24 @@ class DisplayFeedTest extends ViewTestBase {
         ],
       ],
     ]);
-    $node_link = $node->toUrl()->setAbsolute()->toString();
 
     // Test the site name setting.
     $site_name = $this->randomMachineName();
-    $frontpage_url = Url::fromRoute('<front>')->setAbsolute()->toString();
     $this->config('system.site')->set('name', $site_name)->save();
 
     $this->drupalGet('test-feed-display.xml');
-    $this->assertEquals($site_name, $this->getSession()->getDriver()->getText('//channel/title'));
-    $this->assertEquals($frontpage_url, $this->getSession()->getDriver()->getText('//channel/link'));
-    $this->assertEquals('Copyright 2019 Dries Buytaert', $this->getSession()->getDriver()->getText('//channel/copyright'));
+    $this->assertEquals($site_name, $this->getSession()->getDriver()->getText('//title'));
     $this->assertEquals($node_title, $this->getSession()->getDriver()->getText('//item/title'));
-    $this->assertEquals($node_link, $this->getSession()->getDriver()->getText('//item/link'));
     // Verify HTML is properly escaped in the description field.
     $this->assertRaw('&lt;p&gt;A paragraph&lt;/p&gt;');
 
-    $view = $this->container->get('entity_type.manager')->getStorage('view')->load('test_display_feed');
+    $view = $this->container->get('entity.manager')->getStorage('view')->load('test_display_feed');
     $display = &$view->getDisplay('feed_1');
     $display['display_options']['sitename_title'] = 0;
     $view->save();
 
     $this->drupalGet('test-feed-display.xml');
-    $this->assertEquals('test_display_feed', $this->getSession()->getDriver()->getText('//channel/title'));
+    $this->assertEquals('test_display_feed', $this->getSession()->getDriver()->getText('//title'));
 
     // Add a block display and attach the feed.
     $view->getExecutable()->newDisplay('block', NULL, 'test');
@@ -92,7 +81,7 @@ class DisplayFeedTest extends ViewTestBase {
     $this->drupalPlaceBlock('views_block:test_display_feed-test');
     $this->drupalGet('<front>');
     $feed_icon = $this->cssSelect('div.view-id-test_display_feed a.feed-icon');
-    $this->assertContains('test-feed-display.xml', $feed_icon[0]->getAttribute('href'), 'The feed icon was found.');
+    $this->assertTrue(strpos($feed_icon[0]->getAttribute('href'), 'test-feed-display.xml'), 'The feed icon was found.');
 
     // Test feed display attached to page display with arguments.
     $this->drupalGet('test-feed-icon/' . $node->id());
@@ -101,8 +90,8 @@ class DisplayFeedTest extends ViewTestBase {
     $this->assertEqual($icon_href, $page_url . '/feed', 'The feed icon was found.');
     $link_href = $this->cssSelect('link[type = "application/rss+xml"][href *= "test-feed-icon"]')[0]->getAttribute('href');
     $this->assertEqual($link_href, $page_url . '/feed', 'The RSS link was found.');
-    $this->drupalGet($icon_href);
-    $this->assertEquals($frontpage_url, $this->getSession()->getDriver()->getText('//channel/link'));
+    $feed_link = simplexml_load_string($this->drupalGet($icon_href))->channel->link;
+    $this->assertEqual($feed_link, $page_url, 'The channel link was found.');
   }
 
   /**
@@ -113,7 +102,7 @@ class DisplayFeedTest extends ViewTestBase {
 
     // Verify a title with HTML entities is properly escaped.
     $node_title = 'This "cool" & "neat" article\'s title';
-    $node = $this->drupalCreateNode([
+    $this->drupalCreateNode([
       'title' => $node_title,
       'body' => [
         0 => [
@@ -122,11 +111,9 @@ class DisplayFeedTest extends ViewTestBase {
         ],
       ],
     ]);
-    $node_link = $node->toUrl()->setAbsolute()->toString();
 
     $this->drupalGet('test-feed-display-fields.xml');
-    $this->assertEquals($node_title, $this->getSession()->getDriver()->getText('//item/title'));
-    $this->assertEquals($node_link, $this->getSession()->getDriver()->getText('//item/link'));
+    $this->assertEquals($node_title, $this->getSession()->getDriver()->getText('//title/a'));
     // Verify HTML is properly escaped in the description field.
     $this->assertRaw('&lt;p&gt;A paragraph&lt;/p&gt;');
   }
@@ -148,7 +135,7 @@ class DisplayFeedTest extends ViewTestBase {
     $this->drupalGet('/test-attached-disabled');
     $feed_header = $this->xpath('//link[@rel="alternate"]');
     $this->assertEqual($feed_header[0]->getAttribute('type'), 'application/rss+xml', 'The feed link has the type application/rss+xml.');
-    $this->assertContains('test-attached-disabled.xml', $feed_header[0]->getAttribute('href'), 'Page display contains the correct feed URL.');
+    $this->assertTrue(strpos($feed_header[0]->getAttribute('href'), 'test-attached-disabled.xml'), 'Page display contains the correct feed URL.');
 
     // Disable the feed display.
     $view->displayHandlers->get('feed_1')->setOption('enabled', FALSE);

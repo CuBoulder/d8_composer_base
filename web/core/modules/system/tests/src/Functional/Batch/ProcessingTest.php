@@ -20,11 +20,6 @@ class ProcessingTest extends BrowserTestBase {
   public static $modules = ['batch_test', 'test_page_test'];
 
   /**
-   * {@inheritdoc}
-   */
-  protected $defaultTheme = 'classy';
-
-  /**
    * Tests batches triggered outside of form submission.
    */
   public function testBatchNoForm() {
@@ -118,7 +113,7 @@ class ProcessingTest extends BrowserTestBase {
     $this->drupalGet('batch-test/multistep', ['query' => ['big_tree' => 'small_axe']]);
     $this->drupalPostForm(NULL, [], 'Submit');
     $this->assertText('step 2', 'Form is displayed in step 2.');
-    $this->assertContains('batch-test/multistep?big_tree=small_axe', $this->getUrl(), 'Query argument was persisted and another extra argument was added.');
+    $this->assertTrue(strpos($this->getUrl(), 'batch-test/multistep?big_tree=small_axe'), 'Query argument was persisted and another extra argument was added.');
   }
 
   /**
