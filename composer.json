@@ -51,7 +51,7 @@
         "drupal/webform": "^5.3",
         "drush-ops/behat-drush-endpoint": "^9.3",
         "drush/drush": "~9",
-        "pantheon-systems/quicksilver-pushback": "~2",
+        "pantheon-systems/quicksilver-pushback": "^2",
         "rvtraveller/qs-composer-installer": "^1.1",
         "simplesamlphp/simplesamlphp": "^1.17",
         "webflo/drupal-core-strict": "^8.6.15",
