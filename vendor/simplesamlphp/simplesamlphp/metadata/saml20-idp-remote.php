@@ -1,1 +1,0 @@
-../../../../private/metadata/saml20-idp-remote.php
