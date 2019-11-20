@@ -3212,8 +3212,7 @@
             "homepage": "https://www.drupal.org/project/feeds_para_mapper",
             "support": {
                 "source": "https://git.drupalcode.org/project/feeds_para_mapper"
-            },
-            "time": "2019-07-01T00:37:13+00:00"
+            }
         },
         {
             "name": "drupal/field_group",
@@ -5591,16 +5590,16 @@
         },
         {
             "name": "simplesamlphp/simplesamlphp",
-            "version": "v1.17.7",
+            "version": "v1.17.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/simplesamlphp/simplesamlphp.git",
-                "reference": "67735a91063284d5ba6ee1f64c79d72ee1b8e599"
+                "reference": "295937ae8672278cad73ec2c78af3749426263de"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/simplesamlphp/simplesamlphp/zipball/67735a91063284d5ba6ee1f64c79d72ee1b8e599",
-                "reference": "67735a91063284d5ba6ee1f64c79d72ee1b8e599",
+                "url": "https://api.github.com/repos/simplesamlphp/simplesamlphp/zipball/295937ae8672278cad73ec2c78af3749426263de",
+                "reference": "295937ae8672278cad73ec2c78af3749426263de",
                 "shasum": ""
             },
             "require": {
@@ -5679,7 +5678,7 @@
                 "sp",
                 "ws-federation"
             ],
-            "time": "2019-11-06T13:20:12+00:00"
+            "time": "2019-11-20T08:26:08+00:00"
         },
         {
             "name": "stack/builder",

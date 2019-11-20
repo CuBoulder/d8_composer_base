@@ -7920,17 +7920,17 @@
     },
     {
         "name": "simplesamlphp/simplesamlphp",
-        "version": "v1.17.7",
-        "version_normalized": "1.17.7.0",
+        "version": "v1.17.8",
+        "version_normalized": "1.17.8.0",
         "source": {
             "type": "git",
             "url": "https://github.com/simplesamlphp/simplesamlphp.git",
-            "reference": "67735a91063284d5ba6ee1f64c79d72ee1b8e599"
+            "reference": "295937ae8672278cad73ec2c78af3749426263de"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/simplesamlphp/simplesamlphp/zipball/67735a91063284d5ba6ee1f64c79d72ee1b8e599",
-            "reference": "67735a91063284d5ba6ee1f64c79d72ee1b8e599",
+            "url": "https://api.github.com/repos/simplesamlphp/simplesamlphp/zipball/295937ae8672278cad73ec2c78af3749426263de",
+            "reference": "295937ae8672278cad73ec2c78af3749426263de",
             "shasum": ""
         },
         "require": {
@@ -7972,7 +7972,7 @@
             "ext-radius": "Needed if a Radius backend is used",
             "predis/predis": "Needed if a Redis server is used to store session information"
         },
-        "time": "2019-11-06T13:20:12+00:00",
+        "time": "2019-11-20T08:26:08+00:00",
         "type": "project",
         "installation-source": "dist",
         "autoload": {
