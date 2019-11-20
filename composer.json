@@ -101,6 +101,7 @@
             "DrupalProject\\composer\\ScriptHandler::createRequiredFiles",
             "rm -f ./vendor/simplesamlphp/simplesamlphp/config/config.php",
             "rm -f ./vendor/simplesamlphp/simplesamlphp/config/authsources.php",
+            "rm -f ./vendor/simplesamlphp/simplesamlphp/metadata/saml20-idp-remote.php",
             "ln -s ../../../../private/simplesaml-config.php ./vendor/simplesamlphp/simplesamlphp/config/config.php",
             "ln -s ../../../../private/authsources.php ./vendor/simplesamlphp/simplesamlphp/config/authsources.php",
             "ln -s ../../../../private/metadata/saml20-idp-remote.php ./vendor/simplesamlphp/simplesamlphp/metadata/saml20-idp-remote.php",
